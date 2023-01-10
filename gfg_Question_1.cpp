@@ -14,7 +14,7 @@ class Solution {
         
         for(auto i : mp)
         {
-              count = count + (i.second*(i.second-1))/2; ;
+            count = count + (i.second*(i.second-1))/2; ;
             
         }
     return count;
