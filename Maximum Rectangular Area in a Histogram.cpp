@@ -49,19 +49,19 @@ class Solution
         vector<int> next;
         next = nextSmallerElement(arr , n);
         
-        int area = INT_MIN;
+        long long area = INT_MIN;
         
         for(int i = 0 ; i< n ; i++)
         {
-            int l = arr[i];
+            long long l = arr[i];
             
             if(next[i] == -1){
                 next[i] = n;
             }
             
-            int b = next[i] - prev[i] - 1 ;
+            long long b = next[i] - prev[i] - 1 ;
             
-            int newarea = l*b;
+            long long newarea = l*b;
             
             area = max(area , newarea);
         }
