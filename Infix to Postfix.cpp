@@ -19,7 +19,7 @@ class Solution
         for (int i = 0; i < s.length(); i++) {
             char c = s[i];
 
-            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
             {
                 result += c;                
             }
