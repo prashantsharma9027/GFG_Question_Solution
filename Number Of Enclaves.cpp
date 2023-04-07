@@ -5,7 +5,15 @@ class Solution {
         int n = grid.size();
         int m = grid[0].size();
 
-        int visited[n][m] = {0};
+        int visited[n][m];
+
+        for(int i = 0 ; i< n ; i++)
+        {
+            for(int j = 0 ; j<m ; j++)
+            {
+                visited[i][j]=0;
+            }
+        }
         queue<pair<int,int>> q;
         vector<int> delrow = {-1,0,1,0};
         vector<int> delcol = {0,-1,0,1};
