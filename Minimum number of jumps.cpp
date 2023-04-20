@@ -10,7 +10,8 @@ class Solution{
         int count = 0;
 
         for(int i=0;i<n - 1;i++){
-
+  
+  
             int sum = i+arr[i];
 
             jump = max(jump,sum);
