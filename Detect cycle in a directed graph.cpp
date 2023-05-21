@@ -7,7 +7,7 @@ class Solution {
         for(auto neighbour : adj[node])
         {
             if(!visited[neighbour])
-            {
+            { 
                 dfsCall[neighbour] = true;
                 bool ans = dfs(neighbour, visited , adj , dfsCall);
                 if(ans == 1) return true;
