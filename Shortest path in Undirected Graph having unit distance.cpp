@@ -15,11 +15,18 @@ class Solution {
             
         }
         
-        unordered_map<int , bool> visited;
-        unordered_map<int , int> parent;
+        int dis[N];
+        for(int i=0;i<N;i++)
+        {
+            dis[i] = INT_MAX;
+        }
+        
+        dis[src]= 0;
+        
+
         queue<int> q;
-        q.push(1);
-        parent[1] = -1;
+        q.push(src);
+       
         
         while(!q.empty())
         {
@@ -29,27 +36,24 @@ class Solution {
             
             for(auto i : adj[front])
             {
-                if(!visited[i])
+                if(dis[front]+1<dis[i])
                 {
+                    dis[i]= dis[front]+1;
                     q.push(i);
-                    parent[i] = front;
-                    visited[i] = true;
                 }
             }
         }
         
-        vector<int> ans;
-        int CurrNode = n-1;
-        ans.push_back(Curr);
+        vector<int> ans(N,-1);
         
-        while(CurrNode != src)
+        for(int i=0;i<N;i++)
         {
-            CurrNode = parent[CurrNode];
-            ans.push_back(CurrNode);
+          
+           if(dis[i]!= INT_MAX)
+           {
+              ans[i]=dis[i];
+           } 
         }
-        
-        reverse(ans.begin(),ans.end());
-        
         return ans;
         
     }
