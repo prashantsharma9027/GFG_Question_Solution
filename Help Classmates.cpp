@@ -6,6 +6,7 @@ class Solution{
         // Your code goes here
         stack<int> s;
         s.push(-1);
+        
         vector<int> ans(n);
     
         for(int i=n-1; i>=0 ; i--) {
